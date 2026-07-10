@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя — Вступление</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Все стили остались без изменений ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f2eb;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #3d2b1f;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fffcf8;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #dac5b0;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #5c3a21;
+            letter-spacing: 1px;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #8b6b51;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        nav a {
+            color: #7a5a3e;
+            text-decoration: none;
+            padding: 0 12px;
+            border-right: 1px solid #dac5b0;
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+
+        article p {
+            margin-bottom: 1.4em;
+            text-align: justify;
+        }
+
+        .media-left,
+        .media-right {
+            margin: 0.5em 0 1em 0;
+            max-width: 45%;
+            background: #faf5ef;
+            padding: 8px 8px 4px 8px;
+            border: 1px solid #e5d6c8;
+            border-radius: 6px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .media-left {
+            float: left;
+            margin-right: 25px;
+        }
+
+        .media-right {
+            float: right;
+            margin-left: 25px;
+        }
+
+        .media-left img,
+        .media-right img,
+        .media-left video,
+        .media-right video,
+        .media-left iframe,
+        .media-right iframe {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .caption {
+            font-size: 0.85rem;
+            color: #6f5543;
+            text-align: center;
+            padding: 6px 0 2px 0;
+            font-style: italic;
+            border-top: 1px dashed #dac5b0;
+            margin-top: 6px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* ---------- НОВЫЙ БЛОК: пагинация (вперёд / назад) ---------- */
+        .pagination {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5d6c8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #f0e8e0;
+            color: #3d2b1f;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #dac5b0;
+            font-family: 'Georgia', serif;
+        }
+
+        .pagination a:hover {
+            background: #dac5b0;
+            color: #2f1f14;
+            transform: scale(1.02);
+        }
+
+        .pagination a.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            background: #e5ddd5;
+        }
+
+        .pagination .page-indicator {
+            font-size: 0.9rem;
+            color: #8b6b51;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .pagination {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .pagination a {
+                text-align: center;
+            }
+        }
+
+        /* ---------- Адаптив ---------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .media-left,
+            .media-right {
+                float: none;
+                max-width: 100%;
+                margin: 1em 0;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #dac5b0;
+            font-size: 0.9rem;
+            color: #8b6b51;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Привет, [Имя подруги]</h1>
+        <div class="subhead">— либо сейчас, либо через десять лет, но это тебе —</div>
+        <nav>
+            <a href="page1.html">Вступление</a>
+            <a href="page2.html">Кем я был</a>
+            <a href="page3.html">Как мы встретились</a>
+            <a href="page4.html">Памятные моменты</a>
+            <a href="page5.html">Почему я ценю тебя</a>
+            <a href="page6.html">Послесловие</a>
+        </nav>
+    </header>
+
+    <article>
+
+        <p>
+            <strong>Знаешь,</strong> я никогда не умел говорить красивых прощальных слов. 
+            Поэтому я решил сделать это так, как умею — через строчки и картинки, 
+            собранные в одну маленькую историю. Это не просто сайт, это мой способ 
+            сказать «спасибо» и оставить что-то тёплое, что останется с тобой даже 
+            когда меня не будет рядом.
+        </p>
+
+        <div class="media-left">
+            <img src="https://picsum.photos/400/300?random=1" alt="Здесь будет ваше фото">
+            <div class="caption">Фото, которое напоминает о чём-то важном</div>
+        </div>
+
+        <p>
+            Первая страница — как дверь. Ты открываешь её, и за ней — целый мир. 
+            Мир, который без тебя был бы совершенно другим. Я хочу, чтобы ты знала: 
+            каждая встреча, каждый разговор, каждая случайная улыбка — всё это 
+            сложилось в ту самую картину, которую я хочу тебе показать.
+        </p>
+
+        <p>
+            Этот сайт — мой подарок. Не материальный, но, надеюсь, не менее ценный. 
+            Здесь нет бриллиантов, но есть слова, которые я не всегда решался сказать 
+            вслух. И есть картинки — застывшие мгновения, которые мы прожили вместе.
+        </p>
+
+        <div class="media-right">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+            <div class="caption">То самое видео, которое мы смотрели вместе</div>
+        </div>
+
+        <p>
+            Я не знаю, когда ты откроешь этот сайт. Может, завтра, может, через год, 
+            а может, когда пройдёт десять лет. Но я хочу, чтобы в тот момент ты 
+            почувствовала себя так же, как тогда, когда мы впервые встретились — 
+            с лёгким трепетом и улыбкой.
+        </p>
+
+        <p>
+            Пролистай дальше, если хочешь. Там я рассказал о том, каким я был до 
+            встречи с тобой, как мы встретились, о наших смешных и трогательных 
+            моментах, о том, почему ты для меня — особенная. А это лишь начало.
+        </p>
+
+        <div class="media-left">
+            <img src="https://picsum.photos/400/300?random=2" alt="Другое фото">
+            <div class="caption">Место, где всё началось</div>
+        </div>
+
+        <p>
+            В конце я оставлю маленькое послесловие. Но сейчас просто запомни: 
+            этот сайт — как маяк. Даже если я буду далеко, он будет напоминать, 
+            что ты всегда была и остаёшься важной частью моей жизни.
+        </p>
+
+        <div class="clearfix"></div>
+
+        <p style="margin-top: 1em; text-align: right; font-style: italic;">
+            С любовью, <br> [Твоё имя]
+        </p>
+
+        <!-- ====== НОВЫЙ БЛОК ПАГИНАЦИИ ====== -->
+        <div class="pagination">
+            <!-- Ссылка "Назад" – для первой страницы она неактивна -->
+            <a href="#" class="disabled">← Назад</a>
+
+            <span class="page-indicator">Страница 1 из 6</span>
+
+            <!-- Ссылка "Вперёд" ведёт на вторую страницу -->
+            <a href="page2.html">Вперёд →</a>
+        </div>
+
+    </article>
+
+    <footer>
+        Сделано с ❤️ для тебя • 2026
+    </footer>
+
+</div>
+
+</body>
+</html>
