@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя — Как мы познакомились</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Все стили полностью идентичны предыдущим страницам ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f2eb;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #3d2b1f;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fffcf8;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #dac5b0;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #5c3a21;
+            letter-spacing: 1px;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #8b6b51;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        nav a {
+            color: #7a5a3e;
+            text-decoration: none;
+            padding: 0 12px;
+            border-right: 1px solid #dac5b0;
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+
+        article p {
+            margin-bottom: 1.4em;
+            text-align: justify;
+        }
+
+        .media-left,
+        .media-right {
+            margin: 0.5em 0 1em 0;
+            background: #faf5ef;
+            padding: 8px 8px 4px 8px;
+            border: 1px solid #e5d6c8;
+            border-radius: 6px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .media-left {
+            float: left;
+            margin-right: 25px;
+        }
+
+        .media-right {
+            float: right;
+            margin-left: 25px;
+        }
+
+        .media-left img,
+        .media-right img,
+        .media-left video,
+        .media-right video,
+        .media-left iframe,
+        .media-right iframe,
+        .media-left audio,
+        .media-right audio {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .caption {
+            font-size: 0.85rem;
+            color: #6f5543;
+            text-align: center;
+            padding: 6px 0 2px 0;
+            font-style: italic;
+            border-top: 1px dashed #dac5b0;
+            margin-top: 6px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .pagination {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5d6c8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #f0e8e0;
+            color: #3d2b1f;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #dac5b0;
+            font-family: 'Georgia', serif;
+        }
+
+        .pagination a:hover {
+            background: #dac5b0;
+            color: #2f1f14;
+            transform: scale(1.02);
+        }
+
+        .pagination a.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            background: #e5ddd5;
+        }
+
+        .pagination .page-indicator {
+            font-size: 0.9rem;
+            color: #8b6b51;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .pagination {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .pagination a {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .media-left,
+            .media-right {
+                float: none;
+                max-width: 100% !important; /* переопределяем инлайн-стили для мобильных */
+                margin: 1em 0;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #dac5b0;
+            font-size: 0.9rem;
+            color: #8b6b51;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Как мы познакомились</h1>
+        <div class="subhead">— та самая случайность, которая стала судьбой —</div>
+        <nav>
+            <a href="index.html">Вступление</a>
+            <a href="page2.html">Кем я был</a>
+            <a href="page3.html">Как мы встретились</a>
+            <a href="page4.html">Памятные моменты</a>
+            <a href="page5.html">Почему я ценю тебя</a>
+            <a href="page6.html">Послесловие</a>
+        </nav>
+    </header>
+
+    <article>
+
+        <!-- Текст: впишите свой -->
+        <p>
+            <strong>Это случилось</strong> в тот день, когда я меньше всего этого ожидал. 
+            Я даже не думал, что обычный вечер может обернуться чем-то таким, что перевернёт 
+            всю мою жизнь. Но именно тогда, в той самой случайной встрече, началась наша история.
+        </p>
+
+        <!-- ===== ПЕРВАЯ ВСТАВКА (СЛЕВА) ===== -->
+        <div class="media-left" style="max-width: 35%;">
+            <img src="https://picsum.photos/400/300?random=5" alt="Место знакомства">
+            <div class="caption">То самое место, где всё началось</div>
+        </div>
+
+        <p>
+            Если бы мне кто-то сказал, что я встречу тебя именно там, я бы рассмеялся. 
+            Но жизнь любит шутить, и эта шутка оказалась лучшей в моей жизни. Ты стояла 
+            у стойки, и я помню, как свет падал на твои волосы. Я не знал, что сказать, 
+            но знал, что должен подойти.
+        </p>
+
+        <p>
+            Мы разговорились, и время будто остановилось. Оказалось, что у нас общие 
+            интересы, и даже странные привычки совпадали. Этот разговор длился всего 
+            несколько часов, но они стали началом всего, что у нас было.
+        </p>
+
+        <!-- ===== ВТОРАЯ ВСТАВКА (СЛЕВА) ===== -->
+        <div class="media-left" style="max-width: 35%;">
+            <img src="https://picsum.photos/400/300?random=6" alt="Ещё один кадр из того дня">
+            <div class="caption">А это мы чуть позже, уже не такие чужие</div>
+        </div>
+
+        <p>
+            Потом были прогулки, долгие разговоры по телефону, наши первые совместные 
+            фото. Но всё это началось именно с того дня. Я до сих пор с улыбкой вспоминаю, 
+            как ты улыбнулась, когда я сказал какую-то глупость.
+        </p>
+
+        <!-- ===== ТРЕТЬЯ ВСТАВКА (СПРАВА) ===== -->
+        <div class="media-right" style="max-width: 35%;">
+            <video controls preload="metadata" playsinline poster="preview.jpg">
+                <source src="video/our_first.mp4" type="video/mp4">
+            </video>
+            <div class="caption">Короткий ролик с того самого вечера</div>
+        </div>
+
+        <p>
+            Иногда мне кажется, что это было вчера. Все эти чувства, трепет, лёгкое 
+            волнение — они никуда не ушли. Наоборот, с каждым днём я понимал, что 
+            наша встреча — не случайность. Это было предопределено.
+        </p>
+
+        <p>
+            Эта страница — для того, чтобы ты всегда помнила, как мы встретились. 
+            И чтобы, если когда-нибудь забудешь, ты могла открыть этот сайт и 
+            вернуть те первые мгновения.
+        </p>
+
+        <div class="clearfix"></div>
+
+        <p style="margin-top: 1em; text-align: right; font-style: italic;">
+            Спасибо, что тогда сказала «да», <br> [Твоё имя]
+        </p>
+
+        <!-- ====== ПАГИНАЦИЯ (для третьей страницы) ====== -->
+        <div class="pagination">
+            <a href="page2.html">← Назад</a>
+            <span class="page-indicator">Страница 3 из 6</span>
+            <a href="page4.html">Вперёд →</a>
+        </div>
+
+    </article>
+
+    <footer>
+        Сделано с ❤️ для тебя • 2026
+    </footer>
+
+</div>
+
+</body>
+</html>
