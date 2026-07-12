@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя — Послесловие</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Базовые стили (полностью совпадают с предыдущими) ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f2eb;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #3d2b1f;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fffcf8;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #dac5b0;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #5c3a21;
+            letter-spacing: 1px;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #8b6b51;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        nav a {
+            color: #7a5a3e;
+            text-decoration: none;
+            padding: 0 12px;
+            border-right: 1px solid #dac5b0;
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+
+        article p {
+            margin-bottom: 1.4em;
+            text-align: justify;
+        }
+
+        /* ---------- Плавающие блоки (слева/справа) ---------- */
+        .media-left,
+        .media-right {
+            margin: 0.5em 0 1em 0;
+            background: #faf5ef;
+            padding: 8px 8px 4px 8px;
+            border: 1px solid #e5d6c8;
+            border-radius: 6px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .media-left {
+            float: left;
+            margin-right: 25px;
+        }
+
+        .media-right {
+            float: right;
+            margin-left: 25px;
+        }
+
+        .media-left img,
+        .media-right img,
+        .media-left video,
+        .media-right video,
+        .media-left iframe,
+        .media-right iframe,
+        .media-left audio,
+        .media-right audio {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .caption {
+            font-size: 0.85rem;
+            color: #6f5543;
+            text-align: center;
+            padding: 6px 0 2px 0;
+            font-style: italic;
+            border-top: 1px dashed #dac5b0;
+            margin-top: 6px;
+        }
+
+        /* ---------- Центрированный блок (для картинки + аудио) ---------- */
+        .media-center {
+            margin: 2em auto;
+            max-width: 50%;
+            background: #faf5ef;
+            padding: 8px 8px 4px 8px;
+            border: 1px solid #e5d6c8;
+            border-radius: 6px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            /* float отключён, центрируется через auto */
+        }
+
+        .media-center img,
+        .media-center audio,
+        .media-center video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Аудио под картинкой – уже имеет ширину 100% родителя */
+        .media-center audio {
+            margin-top: 6px; /* небольшой отступ от картинки */
+        }
+
+        .media-center .caption {
+            /* подпись работает так же */
+            font-size: 0.85rem;
+            color: #6f5543;
+            text-align: center;
+            padding: 6px 0 2px 0;
+            font-style: italic;
+            border-top: 1px dashed #dac5b0;
+            margin-top: 6px;
+        }
+
+        /* ---------- Остальные общие стили ---------- */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .pagination {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5d6c8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #f0e8e0;
+            color: #3d2b1f;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #dac5b0;
+            font-family: 'Georgia', serif;
+        }
+
+        .pagination a:hover {
+            background: #dac5b0;
+            color: #2f1f14;
+            transform: scale(1.02);
+        }
+
+        .pagination a.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            background: #e5ddd5;
+        }
+
+        .pagination .page-indicator {
+            font-size: 0.9rem;
+            color: #8b6b51;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .pagination {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .pagination a {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .media-left,
+            .media-right,
+            .media-center {
+                float: none !important;
+                max-width: 100% !important;
+                margin: 1em 0;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #dac5b0;
+            font-size: 0.9rem;
+            color: #8b6b51;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Послесловие</h1>
+        <div class="subhead">— на прощание, но не навсегда —</div>
+        <nav>
+            <a href="index.html">Вступление</a>
+            <a href="page2.html">Кем я был</a>
+            <a href="page3.html">Как мы встретились</a>
+            <a href="page4.html">Памятные моменты</a>
+            <a href="page5.html">Почему я ценю тебя</a>
+            <a href="page6.html">Послесловие</a>
+        </nav>
+    </header>
+
+    <article>
+
+        <!-- Вступительный абзац -->
+        <p>
+            <strong>Вот мы и подошли к концу.</strong> Я знаю, что прощаться тяжело, 
+            но я хочу, чтобы это «до свидания» было тёплым и светлым. Этот сайт – 
+            не прощание, а обещание, что всё хорошее остаётся с нами навсегда.
+        </p>
+
+        <!-- ===== ВИДЕО (справа, плавает) ===== -->
+        <div class="media-right" style="max-width: 35%;">
+            <video controls preload="metadata" playsinline poster="preview-final.jpg">
+                <source src="video/goodbye.mp4" type="video/mp4">
+            </video>
+            <div class="caption">Последнее видео – для тебя</div>
+        </div>
+
+        <p>
+            Я не знаю, что ждёт нас впереди. Но я точно знаю, что эти страницы 
+            останутся здесь, в интернете, как маленький островок наших воспоминаний. 
+            Ты всегда сможешь открыть их и вспомнить, как мы смеялись, спорили, 
+            мечтали и просто были рядом.
+        </p>
+
+        <p>
+            Спасибо тебе за каждый день. За то, что ты научила меня видеть красоту 
+            в мелочах. За то, что я стал лучше. За то, что ты была и остаёшься 
+            частью моей истории.
+        </p>
+
+        <p>
+            Я не говорю «прощай». Я говорю «до встречи». Потому что такие люди, как ты, 
+            не исчезают бесследно. Ты всегда будешь в моих мыслях, в моих песнях 
+            и в моём сердце.
+        </p>
+
+        <!-- Сброс обтекания перед центрированным блоком -->
+        <div class="clearfix"></div>
+
+        <!-- ===== ЦЕНТРИРОВАННЫЙ БЛОК: картинка + аудио ===== -->
+        <div class="media-center">
+            <!-- Картинка -->
+            <img src="https://picsum.photos/600/400?random=13" alt="Наш последний снимок">
+            <div class="caption">Последнее фото, которое мы сделали вместе</div>
+
+            <!-- Аудио (MP3) – идёт сразу под картинкой, ширина = 100% блока -->
+            <audio controls preload="metadata">
+                <source src="audio/farewell.mp3" type="audio/mpeg">
+            </audio>
+            <!-- Подпись для аудио (можно убрать или оставить) -->
+            <div class="caption">Песня, которая всегда будет напоминать о нас</div>
+        </div>
+
+        <p style="margin-top: 1.5em; text-align: center; font-style: italic; font-size: 1.1rem;">
+            Спасибо, что ты была в моей жизни. <br>
+            <span style="font-size: 1.2rem;">❤️</span>
+        </p>
+
+        <p style="text-align: right; font-style: italic;">
+            Твой навсегда, <br> [Твоё имя]
+        </p>
+
+        <!-- ====== ПАГИНАЦИЯ (последняя страница, Вперёд заблокирована) ====== -->
+        <div class="pagination">
+            <a href="page5.html">← Назад</a>
+            <span class="page-indicator">Страница 6 из 6</span>
+            <a href="#" class="disabled">Вперёд →</a>
+        </div>
+
+    </article>
+
+    <footer>
+        Сделано с ❤️ для тебя • 2026
+    </footer>
+
+</div>
+
+</body>
+</html>
