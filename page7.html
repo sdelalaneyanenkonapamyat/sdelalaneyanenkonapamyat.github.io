@@ -108,8 +108,8 @@
    иначе float схлопнется до ширины подписи */
 .media-left:has(> .carousel),
 .media-right:has(> .carousel) {
-    width: 35%;
-    max-width: 100%;
+    width: 100%;      /* блок всегда занимает доступную ширину... */
+    max-width: 35%;   /* ...но не шире 35% (на ПК) */
 }
 
 .carousel .carousel-images {
