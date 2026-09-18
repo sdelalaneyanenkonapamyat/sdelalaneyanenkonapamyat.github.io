@@ -102,27 +102,39 @@
             margin-top: 6px;
         }
 
-        /* ---------- Карусель ---------- */
-        .carousel .carousel-images {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            border-radius: 4px;
-            overflow: hidden;
-            background: #ece3d8;
-        }
-        .carousel .carousel-images img {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.35s ease;
-            display: block;
-            border-radius: 0;
-        }
-        .carousel .carousel-images img.active { opacity: 1; }
+        /* ===== Карусель (листалка фото) ===== */
+
+/* Плавающий блок с каруселью должен иметь точную ширину,
+   иначе float схлопнется до ширины подписи */
+.media-left:has(> .carousel),
+.media-right:has(> .carousel) {
+    width: 35%;
+    max-width: 100%;
+}
+
+.carousel .carousel-images {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #ece3d8;
+    display: grid;              /* все фото в одной ячейке */
+}
+
+.carousel .carousel-images img {
+    grid-area: 1 / 1;           /* стопка: все друг на друге */
+    width: 100%;
+    height: auto;               /* сохраняет пропорции фото */
+    display: block;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.carousel .carousel-images img.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 
         .carousel-btn {
             position: absolute;
